@@ -4,7 +4,7 @@ const contDay = document.querySelector("#dayContent span");
 const contSecond = document.querySelector("#secondContent span");
 let millisInDay = 86400000;
 
-let dateend = new Date("11/10/2023").getTime();
+let dateend = new Date().getTime() + millisInDay * 4;
 let now = dateend - Date.now();
 let day = now / millisInDay;
 let hour = (day - Math.floor(day)) * 24;
