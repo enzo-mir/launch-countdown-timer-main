@@ -14,9 +14,8 @@ contHour.innerHTML = Math.floor(hour);
 contMinute.innerHTML = Math.floor(minutes);
 contDay.innerHTML = Math.floor(day);
 contSecond.innerHTML = Math.floor(seconds);
-
 function writeSeconde() {
-  now = dateend - Date.now();
+  let now = dateend - Date.now();
   let day = now / millisInDay;
   let hour = (day - Math.floor(day)) * 24;
   let minutes = (hour - Math.floor(hour)) * 60;
@@ -26,5 +25,4 @@ function writeSeconde() {
   contDay.innerHTML = Math.floor(day);
   contSecond.innerHTML = Math.floor(seconds);
 }
-
 setInterval(writeSeconde, 1000);

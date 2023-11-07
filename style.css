@@ -13,15 +13,92 @@ body {
 }
 body {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 0.2fr 1fr auto;
+  gap: 10vh;
+  align-items: start;
+  place-items: center;
+  background: url("./images/pattern-hills.svg") bottom, url("./images/bg-stars.svg") top, linear-gradient(hsl(234, 17%, 12%), hsl(271, 23%, 18%));
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+  font-family: "Red Hat Text", sans-serif;
+  padding-block: 5em;
 }
-
+header h1 {
+  letter-spacing: 0.5ch;
+  font-size: clamp(20px, 3vw, 1.75em);
+}
 main {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  height: 100%;
+  width: 100%;
   & section {
-    display: flex;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 25%);
     gap: 20px;
+    text-align: center;
+    width: clamp(300px, 75vw, 1000px);
+
+    & div {
+      position: relative;
+      display: grid;
+      width: 100%;
+      max-width: 150px;
+      height: 100%;
+      gap: 20px;
+
+      & > p {
+        color: hsl(237, 18%, 59%);
+      }
+      & span {
+        position: relative;
+        display: grid;
+        place-items: center;
+        font-size: clamp(15px, 7.5vw, 5em);
+        color: hsl(345, 95%, 68%);
+        background: linear-gradient(hsl(236, 21%, 22%) 48%, hsl(234, 17%, 12%) 50%, hsl(236, 21%, 26%) 0%);
+        width: 100%;
+        aspect-ratio: 9 / 10;
+        border-radius: 5px;
+        overflow: hidden;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: 50%;
+          transform: translate(-50%, -50%);
+          left: 0;
+          width: 15px;
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+          background: hsl(235, 16%, 14%);
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          top: 50%;
+          transform: translate(50%, -50%);
+          right: 0;
+          width: 15px;
+          aspect-ratio: 1 / 1;
+          border-radius: 50%;
+          background: hsl(235, 16%, 14%);
+        }
+      }
+    }
+  }
+}
+footer {
+  & ul {
+    display: flex;
+    gap: 30px;
+    & li {
+      list-style-type: none;
+    }
   }
 }
